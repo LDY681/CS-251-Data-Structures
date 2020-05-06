@@ -1,0 +1,8 @@
+int
+push 12
+push 5
+top
+push 7
+push 16
+top
+

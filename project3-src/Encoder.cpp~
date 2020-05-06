@@ -1,0 +1,66 @@
+#include <iostream>
+#include <fstream>
+#include "Encoder.h"
+
+using namespace std;
+
+		//unsigned frequency_table[256];
+		// You need to add more class memeber and methods
+		//test_file_path is the input (decoded) file
+		Encoder::Encoder(string file_path) {
+			fpstr = file_path;
+		}
+
+		//Fills up the frequency_table array where frequency_table[i] 
+		//will contain the frequency of char with ASCII code i		
+		void Encoder::buildFrequencyTable() {
+			ifstream myfile;
+			myfile.open(fpstr);
+			
+			char c;
+			while (myfile.get(c)) {	//get char each time
+				frequency_table[c]++;
+			}
+			return;
+		}
+
+		//main will call this function is argument is -e
+		//Builds the min head and run the encoding algorithm
+		void Encoder::encode() {
+
+			//create MinHeap
+			MinHeap *mh = new MinHeap();
+			int idx;
+		       
+			for (idx = 0; idx < 256; idx++) {
+				if (frequency_table[idx] != 0) {
+					TreeNode * ins = new TreeNode( (unsigned char)idx, (unsigned)frequency_table[idx]);
+					mh->insert(ins);
+				}
+			}
+
+			//Create HuffTree bases on minHeap
+			HuffTree * htree = new HuffTree();
+			htree->buildTree(mh);
+			htree->generateCodes();
+
+			ofstream myfile;
+			myfile.open("text.txt");
+			//write huffcode in 010101 form into text.txt
+			while ( htree->huffcode != NULL) {
+				myfile << htree->huffcode << endl;
+				htree->huffcode++;
+			}
+		}
+
+		//Generates the encoded file and save it as output_file_path
+		void Encoder::writeEncodedFile(string output_file_path) {
+			
+		}
+
+		Encoder::~Encoder() {
+		
+		
+		}
+
+

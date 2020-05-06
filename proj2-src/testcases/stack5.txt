@@ -1,0 +1,11 @@
+int
+push 176
+push 144
+size
+push 139
+top
+empty
+push 11
+top
+size
+

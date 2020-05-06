@@ -1,0 +1,31 @@
+int
+empty
+push 4994
+top
+size
+push 2731
+push 8309
+pop
+size
+push 4973
+top
+push 8369
+pop
+pop
+empty
+size
+push 7807
+pop
+push 6851
+pop
+push 4999
+pop
+pop
+top
+push 2438
+pop
+push 5668
+pop
+pop
+size
+

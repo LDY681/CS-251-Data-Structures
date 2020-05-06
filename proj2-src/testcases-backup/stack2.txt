@@ -1,0 +1,31 @@
+double
+empty
+push 6543.72
+top
+push 307.78
+pop
+push 9425.02
+top
+empty
+push 5795.23
+pop
+pop
+push 3483.66
+size
+push 6484.79
+pop
+push 3531.76
+pop
+pop
+push 8282.75
+push 9191.93
+top
+size
+push 1714.64
+pop
+size
+empty
+pop
+pop
+empty
+

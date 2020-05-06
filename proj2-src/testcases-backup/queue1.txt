@@ -1,0 +1,31 @@
+int
+empty
+enqueue 4994
+front
+size
+enqueue 2731
+enqueue 8309
+dequeue
+size
+enqueue 4973
+front
+enqueue 8369
+dequeue
+dequeue
+empty
+size
+enqueue 7807
+dequeue
+enqueue 6851
+dequeue
+enqueue 4999
+dequeue
+dequeue
+front
+enqueue 2438
+dequeue
+enqueue 5668
+dequeue
+dequeue
+size
+

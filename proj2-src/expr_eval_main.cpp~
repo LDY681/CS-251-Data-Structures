@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include "expr_eval.h"
+
+
+using namespace std;
+
+int main(){
+	string input;
+	string earlyinput;
+	expr_eval e;
+
+	while (!cin.eof()) {
+		cin >> input;
+		if (input.find("x") >= 0 ){	//if input string contain x
+			earlyinput = input;
+			cin >> input;
+			double x = input[0] - '0';
+			cout << e.eval(earlyinput, x) << endl;
+		}else{
+			cout << e.eval(input) << endl;
+		}
+	}
+
+}
+	

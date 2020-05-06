@@ -1,0 +1,90 @@
+#include <iostream>
+#include "HuffTree.h"
+#include <string>
+
+/*HuffTree is not exactly A tree
+we can implement by minizing to a single node that has all the linkings
+*/
+HuffTree::HuffTree() {
+	htree = new TreeNode(0, 0);
+	iter = htree;	//iterator
+	bitcode =  new char[1024];
+	index = 0;
+	huffcode = new string[1024];
+	mmh = new MinHeap();
+}
+
+//build a hiffman tree  give a minheap
+void HuffTree::buildTree(MinHeap * mh) {
+	mmh = mh;
+	unsigned freq = 0;
+	TreeNode *a;
+	TreeNode *b;
+
+	while ( mh->getSize() >= 2) {
+		//extract two nodes from minheap
+		a = mh->removeMin();
+		b = mh->removeMin();
+		freq = a->getFrequency() + b->getFrequency();
+
+		//create internal node
+		TreeNode *inter = new TreeNode('$', freq);
+		inter->join(a, b);
+		mh->insert(inter);
+	}
+
+	//Now we have only 1 element in mh,
+	//we are done huffing
+	htree = mh->top();
+	return;
+}
+
+//generate codes by traversing the huffman tree
+//and store them in an internal data structure (array of strings for example)
+void HuffTree::generateCodes() {
+	if (iter->getLeft()) {
+		bitcode[index] = 1;
+		index++;
+		iter = iter->getLeft();
+		generateCodes();
+	}
+
+	if (iter->getRight()) {
+		bitcode[index] = 0;
+		index++;
+		iter = iter->getRight();
+		generateCodes();
+	}
+
+	//store them in string* huffcode
+	if (iter->isLeafNode()) {
+		//see if it actually works!!!!
+		string s1(bitcode);
+		string s2(iter->getFrequency());
+		*huffcode = s1 + ' ' + s2;
+		 huffcode++;
+	}
+}
+
+//returns root of the tree
+TreeNode * HuffTree::getRoot() {
+	return htree;
+}
+
+//TODO:
+//returns huffman code from  the ascii code //this is the bit code
+string HuffTree::getCharCode(int c) {
+		
+	
+	}
+
+
+	
+
+
+
+
+
+HuffTree::~HuffTree() {
+
+}

@@ -1,0 +1,9 @@
+int
+enqueue 65
+enqueue 32
+front
+enqueue 71
+enqueue 22
+front
+front
+

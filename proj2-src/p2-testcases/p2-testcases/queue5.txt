@@ -1,0 +1,14 @@
+int
+empty
+enqueue 12
+enqueue 1345
+front
+size
+enqueue 176
+enqueue 678
+front
+size
+size
+front
+empty
+

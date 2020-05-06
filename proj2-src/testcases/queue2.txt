@@ -1,0 +1,31 @@
+double
+empty
+enqueue 6543.72
+front
+enqueue 307.78
+dequeue
+enqueue 9425.02
+front
+empty
+enqueue 5795.23
+dequeue
+dequeue
+enqueue 3483.66
+size
+enqueue 6484.79
+dequeue
+enqueue 3531.76
+dequeue
+dequeue
+enqueue 8282.75
+enqueue 9191.93
+front
+size
+enqueue 1714.64
+dequeue
+size
+empty
+dequeue
+dequeue
+empty
+

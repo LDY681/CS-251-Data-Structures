@@ -1,0 +1,15 @@
+#!/bin/bash
+
+make
+
+for test in `ls input*.txt`
+do
+	testNum=`echo $test | grep -o -E "[0-9]+"`
+	./program < $test > $test.out
+    	if (diff $test.out output$testNum.txt)
+	then
+	    echo "Test $testNum PASSED"
+	else
+	    echo "Test $testNum FAILED"
+	fi	    
+done 

@@ -1,0 +1,31 @@
+string
+enqueue marsh 
+front
+enqueue leuce
+dequeue
+enqueue alula 
+front
+empty
+enqueue bowls 
+dequeue
+empty
+dequeue
+enqueue tafia 
+size
+front
+enqueue aleut 
+dequeue
+enqueue alike 
+dequeue
+empty
+front
+enqueue suety 
+enqueue price 
+front
+size
+enqueue fiery 
+dequeue
+size
+dequeue
+empty
+

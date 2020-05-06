@@ -1,0 +1,31 @@
+string
+push marsh 
+top
+push leuce
+pop
+push alula 
+top
+empty
+push bowls 
+pop
+empty
+pop
+push tafia 
+size
+top
+push aleut 
+pop
+push alike 
+pop
+empty
+top
+push suety 
+push price 
+top
+size
+push fiery 
+pop
+size
+pop
+empty
+
